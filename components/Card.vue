@@ -26,7 +26,8 @@ const colorTailwindcss = {
   '緋': 'red',
   '碧': 'green',
   '玄': 'gray',
-  '紫': 'purple'
+  '紫': 'purple',
+  '琥': 'orange'
 }
 
 const color = computed(() => {
@@ -80,22 +81,26 @@ function clickCard() {
 
 <style scoped>
 .blue {
-  @apply bg-blue-200/80;
+  @apply bg-blue-200/80 hover:bg-blue-300/80;
 }
 .red {
-  @apply bg-red-200/80;
+  @apply bg-red-200/80 hover:bg-red-300/80;
 }
 
 .green {
-  @apply bg-green-200/80;
+  @apply bg-green-200/80 hover:bg-green-300/80;
 }
 
 .gray {
-  @apply bg-gray-200/80;
+  @apply bg-gray-200/80 hover:bg-gray-300/80;
 }
 
 .purple {
-  @apply bg-purple-200/80;
+  @apply bg-purple-200/80 hover:bg-purple-300/80;
+}
+
+.orange {
+  @apply bg-orange-200/80 hover:bg-orange-300/80;
 }
 
 .highlight {

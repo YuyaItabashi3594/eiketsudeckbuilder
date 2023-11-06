@@ -6,6 +6,7 @@ javascript: (function getDataBase() {
     "force_6e717b210ad288b05c87db211559b24c",
     "force_5e953d989ee8a11a72186e0ecc132ff5",
     "force_26523395a98f45822559dbec2cdf465a",
+    "force_798e080bb31ca24bb0d8fc46bb2f4f40"
   ];
   let arrays = [];
   for (let listClassValue of listClassValues) {
