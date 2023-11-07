@@ -30,12 +30,10 @@ const start = (e: VugelMouseEvent) => {
 const move = (e: VugelMouseEvent,) => {
   props.deck.forEach((card, index) => {
     if (card.img === e.target.tex.source.lookupId && startEvent) {
-      console.log('if is true move')
       const deltaX = e.canvasOffsetX - startEvent.canvasOffsetX;
       const deltaY = e.canvasOffsetY - startEvent.canvasOffsetY;
       dragTarget.value[index]!.x = startX[index] + deltaX;
       dragTarget.value[index]!.y = startY[index] + deltaY;
-
       // Do not scroll on mobile.
       e.originalEvent.preventDefault();
     }
@@ -44,6 +42,7 @@ const move = (e: VugelMouseEvent,) => {
 
 const end = (e: VugelMouseEvent) => {
   startEvent = null;
+  console.log(dragTarget.value[currentCardIndex.value].x)
 };
 
 start, move, end
@@ -64,7 +63,7 @@ function rotateLeft45Degree() {
     <picture :w="40" :h="40" :x="650" src="/arrow-down-right-bold.png" @mousedown="rotateRight45Degree"></picture>
     <rectangle :h="10" :x="0" :y="100" :w="768" color="rgb(0, 255, 0)" />
     <container :flex="true">
-      <picture v-for="(card, index) in deck" :ref="el => dragTarget[index] = el" :src="card.img" :rotation="radian[index]"
-        :w="80" :h="128" :pivot="0.0" @mousedown="start" @mousemove="move" @mouseup="end" @mouseleave="end" />
+      <picture v-for="(card,index) in deck" :ref="el => dragTarget[index] = el" :src="card.img" :rotation="radian[index]"
+        :w="80" :h="128" :pivot="0.5" @mousedown="start" @mousemove="move" @mouseup="end" @mouseleave="end" />
     </container>
   </template>

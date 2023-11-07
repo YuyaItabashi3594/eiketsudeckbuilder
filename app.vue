@@ -33,7 +33,6 @@ const removeCard = (number) => {
 const isMobile = ref(false)
 
 
-
 </script>
 <template>
   <div class="mt-10">
